@@ -13,6 +13,11 @@
 ```bash
 $ npm install vchart --save
 ```
+
+## Environment Support
+
+* Browser: Modern browsers and Internet Explorer 9+
+
 ## Usage
 
 + Import all charts and components
