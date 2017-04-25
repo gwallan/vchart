@@ -1,7 +1,3 @@
----
-search: zh-cn
----
-
 #  v-chart
 + 构建于 d3.js
 + 全面兼容 c3.js API
