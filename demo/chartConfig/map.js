@@ -4,17 +4,14 @@ export default {
     height: 450
   },
   padding: {
-    right: 0,
-    left: -250
+    right: 0
+    // left: 0
   },
   map: {
     label: {
       show: false // 省份区域名称显示
     },
     ratio: 1,
-    position: {
-      x: 150
-    },
     scale: {
       width: 5,
       height: 100,
@@ -24,7 +21,9 @@ export default {
         top: function (w, h) {
           return this.currentHeight - h - 50
         },
-        left: 'right'
+        left: function (w, h) {
+          return this.currentWidth - h - 50
+        }
       },
       format: function (d) {
         return parseInt(d)

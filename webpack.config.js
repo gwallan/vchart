@@ -68,6 +68,11 @@ let config = {
 
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(env)
+    }),
+
+    new ExtractTextPlugin({
+      filename: 'vchart.css',
+      allChunks: true
     })
   ]
 }
@@ -105,11 +110,6 @@ if (env === 'production') {
 
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    }),
-
-    new ExtractTextPlugin({
-      filename: 'vchart.css',
-      allChunks: true
     })
   ])
 }

@@ -2,7 +2,7 @@
   <div>
     <v-map :data="data" :config="config" theme="my-chart">
       <v-tooltip :config="tooltip"></v-tooltip>
-      <v-legend :config="legend"></v-legend>
+      <!-- <v-legend :config="legend"></v-legend> -->
     </v-map>
   </div>
 </template>
@@ -10,14 +10,14 @@
 <script>
 import mapConfig from '../chartConfig/map.js'
 import tooltipConfig from '../chartConfig/tooltip.js'
-import legendConfig from '../chartConfig/legend.js'
+// import legendConfig from '../chartConfig/legend.js'
 
 export default {
   data () {
     return {
       config: mapConfig,
       tooltip: tooltipConfig,
-      legend: legendConfig,
+      // legend: legendConfig,
       data: {
         columns: [
           ['Gansu', 48], ['Qinghai', 47], ['Guangxi', 45], ['Guizhou', 35], ['Chongqing', 34],
