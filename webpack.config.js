@@ -9,16 +9,7 @@ const env = process.env.NODE_ENV;
 function resolve(dir) {
   return path.join(__dirname, './', dir)
 }
-let cssLoaderConfig = (env === 'development' ? {
-      test: /\.css$/,
-      loaders: 'style-loader!css-loader'
-    } : {
-      test: /\.css$/,
-      use: ExtractTextPlugin.extract({
-        fallback: "style-loader",
-        use: "css-loader"
-      })
-    })
+
 let config = {
   module: {
     rules: [{
@@ -37,7 +28,13 @@ let config = {
           'scss': 'vue-style-loader!css-loader!sass-loader'
         }
       }
-    }, cssLoaderConfig, {
+    }, {
+      test: /\.css$/,
+      use: ExtractTextPlugin.extract({
+        fallback: "style-loader",
+        use: "css-loader"
+      })
+    }, {
       test: /\.js$/,
       loader: 'babel-loader',
       exclude: /node_modules/
@@ -71,6 +68,11 @@ let config = {
 
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(env)
+    }),
+
+    new ExtractTextPlugin({
+      filename: 'vchart.css',
+      allChunks: true
     })
   ]
 }
@@ -108,11 +110,6 @@ if (env === 'production') {
 
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    }),
-
-    new ExtractTextPlugin({
-      filename: 'vchart.css',
-      allChunks: true
     })
   ])
 }
