@@ -9,7 +9,16 @@ const env = process.env.NODE_ENV;
 function resolve(dir) {
   return path.join(__dirname, './', dir)
 }
-
+let cssLoaderConfig = (env === 'development' ? {
+      test: /\.css$/,
+      loaders: 'style-loader!css-loader'
+    } : {
+      test: /\.css$/,
+      use: ExtractTextPlugin.extract({
+        fallback: "style-loader",
+        use: "css-loader"
+      })
+    })
 let config = {
   module: {
     rules: [{
@@ -28,13 +37,7 @@ let config = {
           'scss': 'vue-style-loader!css-loader!sass-loader'
         }
       }
-    }, {
-      test: /\.css$/,
-      use: ExtractTextPlugin.extract({
-        fallback: "style-loader",
-        use: "css-loader"
-      })
-    }, {
+    }, cssLoaderConfig, {
       test: /\.js$/,
       loader: 'babel-loader',
       exclude: /node_modules/
