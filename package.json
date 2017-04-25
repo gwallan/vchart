@@ -21,7 +21,7 @@
     "d3",
     "chart"
   ],
-  "author": "Allan Shgga Proshuai",
+  "author": "allan shgga proshuai",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
-    "c3": "git+ssh://gitolite/c3#feature/Component",
+    "c3": "https://github.com/gwallan/c3",
     "d3": "^4.7.4",
     "lodash": "^4.17.4",
     "underscore": "^1.8.3",
