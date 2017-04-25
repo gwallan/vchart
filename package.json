@@ -1,0 +1,68 @@
+{
+  "name": "vchart",
+  "version": "0.0.1",
+  "description": "vue charts",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot --port 3000 --content-base ./demo",
+    "predist": "rm -rf ./dist",
+    "dist": "cross-env NODE_ENV=production webpack",
+    "lint": "eslint --ext .js,.vue src test demo",
+    "docute": "docute ./docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gwallan/vchart.git"
+  },
+  "keywords": [
+    "vue",
+    "c3",
+    "d3",
+    "chart"
+  ],
+  "author": "Allan Shgga Proshuai",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.2",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chai": "^3.5.0",
+    "cross-env": "^4.0.0",
+    "css-loader": "^0.28.0",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.0",
+    "eslint-friendly-formatter": "^2.0.7",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-html": "^2.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "lodash-webpack-plugin": "^0.11.2",
+    "mocha": "^3.2.0",
+    "node-sass": "^4.5.2",
+    "sass": "^0.5.0",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
+    "vue-loader": "^11.3.4",
+    "vue-style-loader": "^2.0.5",
+    "vue-template-compiler": "^2.2.6",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "c3": "git+ssh://gitolite/c3#feature/Component",
+    "d3": "^4.7.4",
+    "lodash": "^4.17.4",
+    "underscore": "^1.8.3",
+    "vue": "^2.2.6"
+  }
+}
