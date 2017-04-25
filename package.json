@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "gitolite:VC"
+    "url": "https://github.com/gwallan/vchart.git"
   },
   "keywords": [
     "vue",
@@ -21,7 +21,7 @@
     "d3",
     "chart"
   ],
-  "author": "Shgga Proshuai",
+  "author": "allan shgga proshuai",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.24.1",
