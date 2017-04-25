@@ -1,6 +1,7 @@
 #  vchart
 
 > `v0.0.1`
+[English_README](README-en.md)
 
 ## 特点
 + 基于 d3.js 构建，全面兼容 c3.js API
@@ -8,8 +9,6 @@
 + 轻量、高效
 
 ## 安装
-
- npm 安装
 
 ```bash
 $ npm install vchart --save
@@ -24,13 +23,38 @@ $ npm install vchart --save
   import App from './App.vue'
 
   Vue.use(Vchart)
-
-  new Vue({
-    el: '#app',
-    render: h => h(App)
-  })
   ```
-  组件中使用
++ 按需加载图形和组件
+
+  例如：
+
+  ```js
+  import Vue from 'vue'
+  import {
+    line, // 线图核心组件
+    x, // 可选，使你可以通过 v-x 标签配置 x 轴
+    y, // 可选，使你可以通过 v-y 标签配置 y 轴
+    y2, // 可选，使你可以通过 v-y2 标签配置 y2 轴
+    legend, // 可选，使你可以通过 v-legend 标签配置 legend
+    tooltip, // 可选，使你可以通过 v-tooltip 标签配置 tooltip
+    point, // 可选，使你可以通过 v-point 标签配置 point
+    region, // 可选，使你可以通过 v-region 标签配置 region
+    grid // 可选，使你可以通过 v-grid 标签配置 grid
+  } from 'vchart'
+  import App from './App.vue'
+
+  Vue.use(line)
+  Vue.use(x)
+  Vue.use(y)
+  Vue.use(y2)
+  Vue.use(legend)
+  Vue.use(tooltip)
+  Vue.use(point)
+  Vue.use(region)
+  Vue.use(grid)
+
+  ```
+  然后你就可以在你的模板中使用组件了，例如：
 
   ```js
   <template>
@@ -71,40 +95,6 @@ $ npm install vchart --save
   </style>
 
   ```
-+ 按需加载图形和组件
-
-  以折线图为例：
-
-  ```js
-  import Vue from 'vue'
-  import {
-    line, // 线图核心组件
-    x, // 可选，使你可以通过 v-x 标签配置 x 轴
-    y, // 可选，使你可以通过 v-y 标签配置 y 轴
-    y2, // 可选，使你可以通过 v-y2 标签配置 y2 轴
-    legend, // 可选，使你可以通过 v-legend 标签配置 legend
-    tooltip, // 可选，使你可以通过 v-tooltip 标签配置 tooltip
-    point, // 可选，使你可以通过 v-point 标签配置 point
-    region, // 可选，使你可以通过 v-region 标签配置 region
-    grid // 可选，使你可以通过 v-grid 标签配置 grid
-  } from 'vchart'
-  import App from './App.vue'
-
-  Vue.use(line)
-  Vue.use(x)
-  Vue.use(y)
-  Vue.use(y2)
-  Vue.use(legend)
-  Vue.use(tooltip)
-  Vue.use(point)
-  Vue.use(region)
-  Vue.use(grid)
-
-  new Vue({
-    el: '#app',
-    render: h => h(App)
-  })
-  ```
   如果你不喜欢这种方式，你还可以使用 c3.js 的方式进行图形的配置，但是出于复用性和易于维护性的原则，我们不推荐这么做。
 
   ```js
@@ -114,10 +104,6 @@ $ npm install vchart --save
 
   Vue.use(v-line)
 
-  new Vue({
-    el: '#app',
-    render: h => h(App)
-  })
   ```
 
   组件中
